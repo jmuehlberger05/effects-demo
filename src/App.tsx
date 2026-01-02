@@ -1,4 +1,4 @@
-import { CardHoverEffect } from "./components/card-hover-effect";
+import { CardHoverEffect } from "./components/card-hover-effect/card-hover-effect";
 
 function App() {
   return (
