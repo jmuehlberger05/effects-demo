@@ -27,6 +27,7 @@ export const HoverCard = ({
       translateY: hoverPos.ty,
       rotate: hoverPos.rotate,
       delay: hoverPos.delay,
+      scale: hoverPos.scale,
       duration: 0.3,
       ease: "back.out(1.4)",
     });
@@ -36,6 +37,7 @@ export const HoverCard = ({
     gsap.to(cardRef.current, {
       translateY: 0,
       translateX: 0,
+      scale: 1,
       rotate: 0,
       duration: 0.3,
       ease: "back.out(1.4)",

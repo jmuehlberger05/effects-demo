@@ -1,7 +1,13 @@
 import { useState } from "react";
 import { HoverCard } from "./hover-card";
+import { cn } from "../../lib/utils/cn";
 
-export const CardHoverEffect = () => {
+export const CardHoverEffect = ({
+  className,
+  ...props
+}: {
+  className?: React.HTMLAttributes<HTMLDivElement>["className"];
+}) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
   const handleMouseLeave = () => {
@@ -9,7 +15,11 @@ export const CardHoverEffect = () => {
   };
 
   return (
-    <div className="flex -space-x-25" onMouseLeave={handleMouseLeave}>
+    <div
+      className={cn("flex -space-x-25", className)}
+      onMouseLeave={handleMouseLeave}
+      {...props}
+    >
       <HoverCard
         index={0}
         src={"/images/1.jpg"}

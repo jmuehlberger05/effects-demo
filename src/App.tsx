@@ -1,11 +1,7 @@
-import { CardHoverEffect } from "./components/card-hover-effect/card-hover-effect";
+import CardHoverPage from "./components/card-hover-effect/page";
 
 function App() {
-  return (
-    <>
-      <CardHoverEffect />
-    </>
-  );
+  return <CardHoverPage />;
 }
 
 export default App;
