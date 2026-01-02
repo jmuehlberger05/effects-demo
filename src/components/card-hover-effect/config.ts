@@ -4,14 +4,15 @@ export const initialPositions: {
   ty: number; // rem / 4
   rotate: number;
   z: number;
+  from: number;
 }[] = [
-  { scale: 0.85, tx: 15, ty: 28, rotate: -21, z: 7 },
-  { scale: 0.9, tx: 7, ty: 12, rotate: -14, z: 8 },
-  { scale: 0.95, tx: 0, ty: 3, rotate: -7, z: 9 },
-  { scale: 1, tx: 0, ty: 0, rotate: 0, z: 10 },
-  { scale: 0.95, tx: 0, ty: 3, rotate: 7, z: 9 },
-  { scale: 0.9, tx: -7, ty: 12, rotate: 14, z: 8 },
-  { scale: 0.85, tx: -15, ty: 28, rotate: 21, z: 7 },
+  { scale: 0.85, tx: 15, ty: 28, rotate: -21, z: 7, from: 250 },
+  { scale: 0.9, tx: 7, ty: 12, rotate: -14, z: 8, from: 200 },
+  { scale: 0.95, tx: 0, ty: 3, rotate: -7, z: 9, from: 150 },
+  { scale: 1, tx: 0, ty: 0, rotate: 0, z: 10, from: 0 },
+  { scale: 0.95, tx: 0, ty: 3, rotate: 7, z: 9, from: -150 },
+  { scale: 0.9, tx: -7, ty: 12, rotate: 14, z: 8, from: -200 },
+  { scale: 0.85, tx: -15, ty: 28, rotate: 21, z: 7, from: -250 },
 ];
 
 export const hoverPositions: {

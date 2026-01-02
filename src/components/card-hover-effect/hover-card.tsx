@@ -1,5 +1,4 @@
 import { useEffect, useRef, type Dispatch, type SetStateAction } from "react";
-import { cn } from "../../lib/utils/cn";
 import { gsap } from "gsap";
 import { hoverPositions, initialPositions } from "./config";
 
@@ -21,17 +20,16 @@ export const HoverCard = ({
   const handleMouseEnter = () => setSelectedIndex(index);
 
   const handleSomeCardSelected = (selectedIndex: number) => {
-    const myPosition = hoverPositions[selectedIndex][index];
+    const hoverPos = hoverPositions[selectedIndex][index];
 
     gsap.to(cardRef.current, {
-      translateX: myPosition.tx,
-      translateY: myPosition.ty,
-      rotate: myPosition.rotate,
-      delay: myPosition.delay,
+      translateX: hoverPos.tx,
+      translateY: hoverPos.ty,
+      rotate: hoverPos.rotate,
+      delay: hoverPos.delay,
       duration: 0.3,
-      ease: "back.out(1.7)",
+      ease: "back.out(1.4)",
     });
-    console.log("myPosition", myPosition);
   };
 
   const handleNoCardSelected = () => {
@@ -40,7 +38,7 @@ export const HoverCard = ({
       translateX: 0,
       rotate: 0,
       duration: 0.3,
-      ease: "back.out(1.7)",
+      ease: "back.out(1.4)",
     });
   };
 
@@ -51,6 +49,25 @@ export const HoverCard = ({
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedIndex]);
+
+  // Entrance animation
+  useEffect(() => {
+    gsap.killTweensOf(cardRef.current);
+    gsap.fromTo(
+      cardRef.current,
+      {
+        opacity: Math.abs(index - 3) === 0 ? 1 : 0,
+        x: initialPositions[index].from,
+      },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 1,
+        delay: Math.abs(index - 3) * 0.1,
+        ease: "power3.out",
+      }
+    );
+  }, [index]);
 
   const initPos = initialPositions[index];
 
@@ -65,9 +82,7 @@ export const HoverCard = ({
       onMouseEnter={handleMouseEnter}
     >
       <div
-        className={cn(
-          "w-64 aspect-9/16 bg-gray-300 rounded-[2.5rem] shadow-2xl overflow-clip"
-        )}
+        className={"w-64 aspect-9/16 rounded-[2.5rem] overflow-clip"}
         ref={cardRef}
       >
         <img src={src} className="object-cover w-full h-full" />
