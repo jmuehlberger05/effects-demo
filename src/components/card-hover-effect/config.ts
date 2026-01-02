@@ -66,7 +66,7 @@ export const hoverPositions: {
     { tx: -2, ty: 0, scale: 1, rotate: 1, delay: 0.04 },
   ],
   5: [
-    { tx: 2, ty: 0, scale: 1, rotate: -1, delay: 1 },
+    { tx: 2, ty: 0, scale: 1, rotate: -1, delay: 0.1 },
     { tx: -40, ty: 0, scale: 1, rotate: 0, delay: 0.08 },
     { tx: -80, ty: 0, scale: 1, rotate: 0, delay: 0.06 },
     { tx: -100, ty: 0, scale: 1, rotate: 0, delay: 0.04 },
@@ -75,8 +75,8 @@ export const hoverPositions: {
     { tx: -2, ty: 0, scale: 1, rotate: -2, delay: 0.02 },
   ],
   6: [
-    { tx: 2, ty: 0, scale: 1, rotate: -1, delay: 1.02 },
-    { tx: -40, ty: 0, scale: 1, rotate: 0, delay: 1.0 },
+    { tx: 2, ty: 0, scale: 1, rotate: -1, delay: 0.12 },
+    { tx: -40, ty: 0, scale: 1, rotate: 0, delay: 0.1 },
     { tx: -60, ty: 0, scale: 1, rotate: 0, delay: 0.08 },
     { tx: -80, ty: 0, scale: 1, rotate: 0, delay: 0.06 },
     { tx: -80, ty: 0, scale: 1, rotate: 0, delay: 0.04 },
